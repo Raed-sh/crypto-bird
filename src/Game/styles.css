@@ -1,0 +1,185 @@
+.game-container {
+    position: absolute;
+    width: 95vw;
+    height: 730px;
+    left: 2.5vw;
+  }
+  .ground-container {
+    position:  absolute;
+    height: 150px;
+    width: 95vw;
+    left: 2.5vw;
+}
+.sky {
+    background-image: url('../images/fb-game-background.png');
+    width: 95vw;
+    height: 580px;
+    position: absolute;
+  }
+  
+  .ground {
+    background-image: url('../images/bottom-background.png');
+    width: 95vw;
+    height: 150px;
+    position: absolute;
+    top: 580px;
+    z-index: +1;
+  }
+  .border-left {
+    width: 100px;
+    height: 790px;
+    left: 0;
+    position:  absolute;
+    z-index: +2;
+  }
+  
+  .border-right {
+    width: 100px;
+    height: 790px;
+    position: absolute;
+    z-index: +2;
+    right: 0;
+  }
+  
+  .border-top {
+    width: 660px;
+    height: 50px;
+    position:  absolute;
+    background-color: white;
+    z-index: +2;
+    top: -50px;
+    background-color: #000;
+  }
+  
+  
+  
+  .bird {
+    background-image: url('../images/flappy-bird.png');
+    position: absolute;
+    width: 60px;
+    height: 45px;
+    left: 220px;
+    bottom: 100px;
+    transition: bottom 100ms ease-in-out;
+  }
+  
+  .obstacle {
+    background-image: url('../images/flappybird-pipe.png');
+    width: 60px;
+    height: 300px;
+    position: absolute;
+  }
+  
+  .topObstacle {
+    background-image: url('../images/flappybird-pipe.png');
+    transform: rotate(180deg);
+    width: 60px;
+    height: 300px;
+    position: absolute;
+  }
+  
+  @keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
+  }
+  
+  @-webkit-keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
+  }
+  .ground-moving {
+    position: absolute;
+    top: 580px;
+    height: 150px;
+    background-image: url('../images/bottom-background.png');
+    background-repeat: repeat-x;
+    animation: slideright 100s infinite linear;
+    -webkit-animation: slideright 100s infinite linear;
+    width: 100%;
+    z-index: +1;
+  }
+
+.game.mob .game-container{
+  width: 100%;
+  left: 0;
+}
+.game.mob .ground-container{
+  width: 100%;
+  left: 0;
+}
+.game.mob .sky{
+  width: 100%;
+}
+.game.mob .ground {
+  width: 100%;
+}
+.game.mob .border-left{
+  display: none;
+}
+.game.mob .border-right{
+  display: none;
+}
+.game.mob .border-top{
+  display: none;
+}
+.game.mob .gameover{
+  position: absolute;
+  width: 80%;
+  height: 50%;
+  left: 10%;
+  top: 25%;
+  background-color: rgba(255, 255, 255, 0.37);
+  border-radius: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.game.mob .gameover h3{
+  font-size: 3rem;
+  padding: 1vh;
+  color: red;
+}
+.game.mob .gameover a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  padding: 2.5vh 0;
+  margin: 3vh 0;
+  font-size: 3vh;
+  letter-spacing: 0.5vh;
+  background-color: var(--sec);
+  color: #fff;
+  border: none;
+  border-radius: 5vh;
+  cursor: pointer;
+  transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  text-decoration: none;
+}
+.game.mob .gameover a:hover{
+  background-color: var(--thi);
+}
+.game.mob .myscore{
+  position: absolute;
+  width: 40%;
+  padding: 1vh 0;
+  left: 30%;
+  top: 5%;
+  border-radius: 5vh;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.377);
+}
+.game.mob .myscore h4{
+  font-size: 2rem;
+  color: var(--sec);
+}
