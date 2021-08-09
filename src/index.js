@@ -6,6 +6,7 @@ import './index.css';
 import Home from './Home/index';
 import Game from './Game/index';
 import Score from './Score';
+import Test from './Test';
 
 
 var hist = createBrowserHistory();
@@ -16,7 +17,9 @@ ReactDOM.render(
     <Switch>
       <Route path = "/score" component = {Score}/>
       <Route path="/game" component = {Game}/>
+      <Route path="/test" component={Test} />
       <Route path="/" component={Home} />
+      
 
     </Switch>
   </Router>,

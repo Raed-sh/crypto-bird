@@ -1,0 +1,51 @@
+.testbg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg.png) center;
+    background-size: contain;
+    animation:slider 200s infinite;
+}
+.testbg img{
+    position: relative;
+    top: 500px;
+}
+.obst{
+    background-image: url('../images/flappybird-pipe.png');
+    width: 60px;
+}
+.obst.t{
+    transform: rotate(180deg);
+
+}
+/* .block{
+    width: 50px;
+    height: 500px;
+    background-color: #000;
+    position: relative;
+    left: 400px;
+    animation: blocks 2s infinite linear;
+}
+.block.se{
+    background-color: blue;
+    height: 260px;
+    top: 100px;
+    animation: blocks 2s infinite linear;
+}
+
+@keyframes blocks{
+    0%{
+        left: 400px;
+    }
+    100%{
+        left: -50px;
+    }
+} */
+@keyframes slider{
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
+}
