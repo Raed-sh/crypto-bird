@@ -5,11 +5,9 @@
     background: url(../images/bg.png) center;
     background-size: contain;
     animation:slider 200s infinite;
+    overflow: hidden;
 }
-.testbg img{
-    position: relative;
-    top: 500px;
-}
+
 .obst{
     background-image: url('../images/flappybird-pipe.png');
     width: 60px;

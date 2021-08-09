@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
-import './index.css';
 import Home from './Home/index';
 import Game from './Game/index';
 import Score from './Score';
 import Test from './Test';
+import './index.css';
+
 
 
 var hist = createBrowserHistory();
