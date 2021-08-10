@@ -31,7 +31,6 @@ contract GameContract{
         players[msg.sender] = newPlayer;
         playersInGame.push(newPlayer);
     }
-
     
     function joinGame(string memory firstName) payable public{
         if(block.timestamp > gameEndTime){
