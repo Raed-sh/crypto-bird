@@ -12,10 +12,15 @@
     background-image: url('../images/flappybird-pipe.png');
     width: 60px;
 }
+    
+
 .obst.t{
     transform: rotate(180deg);
-
 }
+
+
+
+
 /* .block{
     width: 50px;
     height: 500px;

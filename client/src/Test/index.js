@@ -59,8 +59,10 @@ export default function Test() {
 
         function drop(){
             const pos_new = bPos - 60;
-            setBPos(pos_new)
-            if (bPos <= 0){
+            setBPos(pos_new);
+            console.log(bPos)
+            if (bPos <= 90){
+                setBPos(75)
                 // endGame();
             }
         }
@@ -92,7 +94,7 @@ export default function Test() {
                     temp_obstacles.push(generateObstacle())
                     break;
                 }
-                temp_obstacles[i] = {...temp_obstacles[i], pos:temp_obstacles[i].pos - 10};
+                temp_obstacles[i] = {...temp_obstacles[i], pos:temp_obstacles[i].pos -10};
             } 
             
                 setObstacles(temp_obstacles)
@@ -108,10 +110,11 @@ export default function Test() {
     return(
         <div className="testbg" onClick={() => jump()}>
             <img style={{width:width, height:height}} src={bird} style={{position:'absolute', left:50, bottom:bPos, transition:"bottom 600ms ease-out"}}/>
+            
             {obstacles.sort(compare).map((o) =>
             <> 
-                <div className="obst t" style={{ height:o.height, position:'absolute',left:o.pos, top:0, transition:'all 1s linear'}}/>
-                <div className="obst" style={{height:o.height, position:'absolute',left:o.pos, bottom:75, transition:'all 1s linear'}}/>
+                <div className="obst t" style={{ height:o.height, position:"absolute",left:o.pos, top:0, transition:"left 500ms ease-out 5ms"}}/>
+                <div className="obst" style={{height:o.height, position:'absolute',left:o.pos, bottom:75, transition:'left 1s ease'}}/>
              </>   
                 )}
             

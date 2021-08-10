@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Web3 from 'web3';
 import Web3Connect from 'web3connect';
 import WalletConnectProvider from "@walletconnect/web3-provider";
@@ -11,6 +11,9 @@ import BurnerConnectProvider from "@burner-wallet/burner-connect-provider";
 
 
 export default function Wallet(){
+
+
+  const [account, setAccount] = useState('')
 
 
 const web3Connect = new Web3Connect.Core({
@@ -69,18 +72,47 @@ const web3Connect = new Web3Connect.Core({
     }
 });
 
-web3Connect.on("connect", (provider: any) => {
+
+  web3Connect.on("connect", (provider: any) => {
     const web3 = new Web3(provider);
 });
 
-web3Connect.on("close", () => {
-    console.log("web3Connect Modal Closed");
+web3Connect.on("connect", (info: { chainId: number, selectedAddress: string }) => {
+  setAccount(info.selectedAddress);
 });
+
+
+web3Connect.on("accountsChanged", (accounts: string[]) => {
+  console.log(accounts);
+});
+
+web3Connect.on("chainChanged", (chainId: number) => {
+  console.log(chainId);
+});
+
+
+web3Connect.on("disconnect", (error: { code: number; message: string }) => {
+  console.log(error);
+});
+
+
+web3Connect.on("close", () => {
+  console.log("web3Connect Modal Closed");
+});
+
+
+
+
 
 
 return(
     <div className="connect_wallet">
-        <button onClick={() => web3Connect.toggleModal()}> Connect Wallet</button>
+      
+       {account ? <h3>Wallet Address</h3> : <></>} 
+      <button onClick={() => web3Connect.toggleModal()} > 
+         {account ? <p>{account}</p> : <p>Connect Wallet</p>}
+        </button>  
+      
     </div>
 )
 }

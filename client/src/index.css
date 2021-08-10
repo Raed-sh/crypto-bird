@@ -17,22 +17,38 @@
   position: absolute;
   right: 2%;
   top: 3%;
+  text-align: center;
+}
+.connect_wallet h3{
+  color: var(--sev);
 }
 .connect_wallet button{
   width: 200px;
   height: 50px;
+  padding: 0 1rem;
   border-radius: 2rem;
   border-color: var(--sev);
-  cursor: pointer;
   outline: none;
   background-color: var(--eig);
   color: #fff;
   font-size: 1.6rem;
   transition: 200ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor:default;
+  
 }
 .connect_wallet button:hover{
+  cursor: pointer;
   background-color: var(--fif);
 }
+.connect_wallet button p{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 
 
